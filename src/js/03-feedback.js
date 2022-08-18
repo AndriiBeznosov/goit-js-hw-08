@@ -11,6 +11,7 @@ form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onForm, 500));
 
 onLocalStorage();
+
 formData = {};
 
 function onFormSubmit(e) {
