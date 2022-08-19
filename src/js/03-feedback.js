@@ -11,19 +11,19 @@ form.addEventListener('input', throttle(onForm, 500));
 
 onLocalStorage();
 
-const formData = {};
+const onFormData = {};
 
 function onFormSubmit(e) {
   e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
-  console.log(`User mail: ${formData.email} `);
-  console.log(`User message: ${formData.message}`);
+  console.log(`User mail: ${onFormData.email} `);
+  console.log(`User message: ${onFormData.message}`);
 }
 
 function onForm(e) {
-  formData[e.target.name] = e.target.value;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  onFormData[e.target.name] = e.target.value;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(onFormData));
 }
 
 function onLocalStorage() {
