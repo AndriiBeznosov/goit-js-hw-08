@@ -2,7 +2,6 @@
 //? При загрузке страницы проверяй состояние хранилища, и если там есть сохраненные данные, заполняй ими поля формы. В противном случае поля должны быть пустыми.
 //? При сабмите формы очищай хранилище и поля формы, а также выводи объект с полями email, message и текущими их значениями в консоль.
 //? Сделай так, чтобы хранилище обновлялось не чаще чем раз в 500 миллисекунд. Для этого добавь в проект и используй библиотеку lodash.throttle.
-
 import throttle from 'lodash.throttle';
 const form = document.querySelector('.feedback-form');
 const STORAGE_KEY = 'feedback-form-state';
@@ -18,7 +17,6 @@ function onFormSubmit(e) {
   e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
-
   console.log(`User mail: ${formData.email} `);
   console.log(`User message: ${formData.message}`);
 }
